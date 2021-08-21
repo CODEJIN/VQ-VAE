@@ -1,3 +1,3 @@
 # VQ-VAE
 
-# This is a practice.
+This is a practice code.
