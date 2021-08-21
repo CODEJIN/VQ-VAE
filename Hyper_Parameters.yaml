@@ -1,0 +1,40 @@
+Encoder:
+    Channels: 128
+    Residual:
+        Stack: 2
+        Calc_Channels: 32
+
+VQVAE:
+    Num_Quantizing: 512
+
+Decoder:
+    Channels: 128
+    Residual:
+        Stack: 2
+        Calc_Channels: 32
+
+Train:
+    Num_Workers: 2
+    Batch_Size: 256
+    Learning_Rate:
+        Initial: 1.0e-3
+        Base: 4000
+    ADAM:
+        Beta1: 0.9
+        Beta2: 0.999
+        Epsilon: 1.0e-7
+    Sigma: 1.0
+    Weight_Decay: 1.0e-6
+    Gradient_Norm: 1.0
+    Max_Step: 10000
+    Checkpoint_Save_Interval: 1000
+    Logging_Interval: 1
+    Evaluation_Interval: 1000
+    Inference_Interval: 1000
+
+Checkpoint_Path: './results/Checkpoint'
+Log_Path: './results/Log'
+
+Use_Mixed_Precision: false  # apex is required.
+Use_Multi_GPU: false
+Device: '0'
